@@ -11,7 +11,7 @@ class ArrayListTest {
 
     @Test
     void add_get() throws Exception {
-        var list = new ArrayList();
+        var list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -22,19 +22,19 @@ class ArrayListTest {
 
     @Test
     void get_negativeIndex_throwsException() {
-        var list = new ArrayList();
+        var list = new ArrayList<Integer>();
         Assertions.assertThrows(Exception.class, () -> list.get(-1));
     }
 
     @Test
     void get_OutOfIndex_throwsException() {
-        var list = new ArrayList();
+        var list = new ArrayList<Integer>();
         Assertions.assertThrows(Exception.class, () -> list.get(1));
     }
 
     @Test
     void remove() throws Exception {
-        var list = new ArrayList();
+        var list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);

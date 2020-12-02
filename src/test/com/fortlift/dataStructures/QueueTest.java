@@ -7,13 +7,13 @@ class QueueTest {
 
     @Test
     void isEmpty() {
-        var queue = new Queue();
+        var queue = new Queue<Integer>();
         Assertions.assertTrue(queue.isEmpty());
     }
 
     @Test
     void enqueue_defaultSizeIsFive_throwsExceptionOnSix() throws Exception {
-        var queue = new Queue();
+        var queue = new Queue<Integer>();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
@@ -24,14 +24,14 @@ class QueueTest {
 
     @Test
     void enqueue_setSize_throwsExceptionOnOverflow() throws Exception {
-        var queue = new Queue(1);
+        var queue = new Queue<Integer>(1);
         queue.enqueue(1);
         Assertions.assertThrows(Exception.class, () -> queue.enqueue(2));
     }
 
     @Test
     void enqueue_dequeue_allValuesReturnedAsExpected() throws Exception {
-        var queue = new Queue();
+        var queue = new Queue<Integer>();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
@@ -46,7 +46,7 @@ class QueueTest {
 
     @Test
     void enqueue_dequeue_enqueue_noErrorsThrown() throws Exception {
-        var queue = new Queue();
+        var queue = new Queue<Integer>();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
@@ -66,7 +66,7 @@ class QueueTest {
 
     @Test
     void dequeue_beyondItems_throwsException() throws Exception {
-        var queue = new Queue();
+        var queue = new Queue<Integer>();
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);

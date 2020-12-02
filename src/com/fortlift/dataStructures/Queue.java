@@ -1,6 +1,6 @@
 package com.fortlift.dataStructures;
 
-public class Queue {
+public class Queue<T> {
     public static final int DEFAULT_SIZE = 5;
     private final Object[] data;
     private int index;
@@ -17,7 +17,7 @@ public class Queue {
         return index == 0;
     }
 
-    public void enqueue(Object obj) throws Exception {
+    public void enqueue(T obj) throws Exception {
         System.out.println(data.length);
         if(index == data.length) {
             throw new Exception("Queue is full");
@@ -26,13 +26,13 @@ public class Queue {
         this.index++;
     }
 
-    public Object dequeue() throws Exception {
+    public T dequeue() throws Exception {
         if(isEmpty()) {
             throw new Exception("Queue is empty");
         }
         Object obj = this.data[0];
         if (this.index - 1 >= 0) System.arraycopy(data, 1, data, 0, this.index - 1);
         this.index--;
-        return obj;
+        return (T)obj;
     }
 }

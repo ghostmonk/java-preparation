@@ -1,6 +1,6 @@
 package com.fortlift.dataStructures;
 
-public class ArrayList {
+public class ArrayList<T> {
     private static final int SIZE_FACTOR = 5;
     private Object[] data;
     private int index;
@@ -12,7 +12,7 @@ public class ArrayList {
         this.index = 0;
     }
 
-    public void add(Object obj) {
+    public void add(T obj) {
         if(this.index == this.size - 1) {
             reallocateSize();
         }
@@ -20,14 +20,14 @@ public class ArrayList {
         index++;
     }
 
-    public Object get(int i) throws Exception {
+    public T get(int i) throws Exception {
         checkBounds(i);
-        return data[i];
+        return (T)data[i];
     }
 
-    public Object remove(int i) throws Exception {
+    public T remove(int i) throws Exception {
         checkBounds(i);
-        Object output = data[i];
+        T output = (T)data[i];
         for(var x = i; i < this.data.length - 1; i++) {
             data[x] = data[x+1];
         }
